@@ -24,4 +24,7 @@ public class Controller {
 
     //Find the employee that has the bigest salary grouped by departments
 
+    public Map<Long, Optional<Employee>> maxSalariesGroupedByDepartment(List<Employee> employeeList){
+        return employeeList.stream().collect(Collectors.groupingBy(e -> e.getDepartment().getId(), Collectors.maxBy(Comparator.comparingLong(Employee::getSalary))));
+    }
 }
