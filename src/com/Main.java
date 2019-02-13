@@ -12,10 +12,18 @@ public class Main {
         List<Employee> employeeList = new EmployeeView().createEmployeeList();
         Controller controller = new Controller();
       /*  System.out.println("1. Return the employee that has the biggest salary: ");
-        controller.maxSalary(employeeList).printEmployee();
-        System.out.println("2. Return the employees that has the biggest salaries: ");
+        controller.maxSalary(employeeList).printEmployee(); */
+
+        /* System.out.println("2. Return the employees that has the biggest salaries: ");
         controller.maxSalaries(employeeList).forEach(Employee::printEmployee);*/
-        System.out.println("3. Return the employees that has the biggest salaries grouped by departments: ");
-        controller.maxSalariesGroupedByDepartment(employeeList).forEach((aLong, employee) -> employee.ifPresent(employee1 -> employee1.printEmployee()));
+
+       /* System.out.println("3. Return the employees that has the biggest salaries grouped by departments: ");
+        controller.maxSalariesGroupedByDepartment(employeeList).forEach((aLong, employee) -> employee.ifPresent(employee1 -> employee1.printEmployee()));*/
+
+/*        System.out.println("4. Return the employees that are in HR department code:  ");
+        controller.loadEmployeesByDepartmentCode(employeeList, "HR").forEach(Employee::printEmployee);*/
+
+        System.out.println("5. Return all the employees that do Shift 1 from department HR: ");
+
     }
 }

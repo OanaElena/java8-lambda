@@ -27,4 +27,10 @@ public class Controller {
     public Map<Long, Optional<Employee>> maxSalariesGroupedByDepartment(List<Employee> employeeList){
         return employeeList.stream().collect(Collectors.groupingBy(e -> e.getDepartment().getId(), Collectors.maxBy(Comparator.comparingLong(Employee::getSalary))));
     }
+
+    //Find employees that work on a given Department name
+
+    public List<Employee> loadEmployeesByDepartmentCode(List<Employee> employeeList, String departmentCode){
+       return employeeList.stream().filter(empl -> empl.getDepartment().getCode().equals(departmentCode)).collect(Collectors.toList());
+    }
 }
