@@ -81,4 +81,16 @@ public class Controller {
                 .filter(employee -> employee.getShift().getId().equals(shiftId))
                 .count();
     }
+
+    //Make all the employee names UPPERCASE and print the employees
+
+    public List<Employee> loadEmployeesWithUppercase(List<Employee> employeelist){
+        return employeelist
+                .stream()
+                .map(employee -> {
+                  employee.setName(employee.getName().toUpperCase());
+                  return employee;
+                })
+                .collect(Collectors.toList());
+    }
 }
