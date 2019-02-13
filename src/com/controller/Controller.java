@@ -62,4 +62,13 @@ public class Controller {
                 .filter(employee -> employee.getName().startsWith(startLetter))
                 .collect(Collectors.toList());
     }
+
+    //Load all employees list sorted by department name
+
+    public List<Employee> loadSortedEmplByDepartmentName(List<Employee> employeeList){
+        return employeeList
+                .stream()
+                .sorted((empl1, empl2) -> empl1.getDepartment().getName().compareTo(empl2.getDepartment().getName()))
+                .collect(Collectors.toList());
+    }
 }
