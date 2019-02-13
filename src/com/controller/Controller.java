@@ -71,4 +71,10 @@ public class Controller {
                 .sorted((empl1, empl2) -> empl1.getDepartment().getName().compareTo(empl2.getDepartment().getName()))
                 .collect(Collectors.toList());
     }
+
+    //Count how many employees work on a specific shift
+
+    public Long countEmployeesOnAShift(List<Employee> employeeList,  Long shiftId){
+        return employeeList.stream().filter(employee -> employee.getShift().getId().equals(shiftId)).count();
+    }
 }

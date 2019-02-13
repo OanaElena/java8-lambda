@@ -29,8 +29,11 @@ public class Main {
 /*        System.out.println("6. Return all the employees that their names start with letter A: ");
         controller.loadEmployeesByNameLetter(employeeList, "A").forEach(Employee::printEmployee);*/
 
-        System.out.println("7. Return all the employees sorted by department name");
-        controller.loadSortedEmplByDepartmentName(employeeList).forEach(Employee::printEmployee);
+/*        System.out.println("7. Return all the employees sorted by department name");
+        controller.loadSortedEmplByDepartmentName(employeeList).forEach(Employee::printEmployee);*/
+
+        System.out.println("8. Return how many employees works on a specific shift: "+controller.countEmployeesOnAShift(employeeList, 2L));
+
 
     }
 }
