@@ -34,8 +34,11 @@ public class Main {
 
 /*        System.out.println("8. Return how many employees works on a specific shift: "+controller.countEmployeesOnAShift(employeeList, 2L));*/
 
-        System.out.println("9. Return all the employees and make their names UPPERCASE: ");
-        controller.loadEmployeesWithUppercase(employeeList).forEach(Employee::printEmployee);
+/*        System.out.println("9. Return all the employees and make their names UPPERCASE: ");
+        controller.loadEmployeesWithUppercase(employeeList).forEach(Employee::printEmployee);*/
+
+        System.out.println("10. Return all the employees sorted DESC by department name");
+        controller.loadEmployeesByDepartmentNameDesc(employeeList).forEach(Employee::printEmployee);
 
     }
 }

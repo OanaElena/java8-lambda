@@ -93,4 +93,15 @@ public class Controller {
                 })
                 .collect(Collectors.toList());
     }
+
+    //Return all the employees sorted by department name DESC
+
+    public List<Employee> loadEmployeesByDepartmentNameDesc(List<Employee> employeeList){
+        Comparator<Employee> comparator = (empl1, empl2) -> empl1.getDepartment().getName().compareTo(empl2.getDepartment().getName());
+
+        return employeeList
+                .stream()
+                .sorted((empl1, empl2) -> comparator.reversed().compare(empl1, empl2))
+                .collect(Collectors.toList());
+    }
 }
