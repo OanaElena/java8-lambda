@@ -33,4 +33,14 @@ public class Controller {
     public List<Employee> loadEmployeesByDepartmentCode(List<Employee> employeeList, String departmentCode){
        return employeeList.stream().filter(empl -> empl.getDepartment().getCode().equals(departmentCode)).collect(Collectors.toList());
     }
+
+    //Find employees that work on a specific shift from a specific department code
+
+    public List<Employee> loadEmployeesFromShiftByDepartmentCode(List<Employee> employeeList, Long shiftId, String departmentCode){
+
+        //return loadEmployeesByDepartmentCode(employeeList, departmentCode).stream().filter(employee -> employee.getShift().getId().compareTo(shiftId) == 0).collect(Collectors.toList());
+                                        //or
+
+        return employeeList.stream().filter(employee -> employee.getDepartment().getCode().equals(departmentCode) && employee.getShift().getId().compareTo(shiftId) == 0).collect(Collectors.toList());
+    }
 }
