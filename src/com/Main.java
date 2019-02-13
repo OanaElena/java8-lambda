@@ -23,9 +23,11 @@ public class Main {
 /*        System.out.println("4. Return the employees that are in HR department code:  ");
         controller.loadEmployeesByDepartmentCode(employeeList, "HR").forEach(Employee::printEmployee);*/
 
-        System.out.println("5. Return all the employees that do Shift 1 from department IS: ");
-        controller.loadEmployeesFromShiftByDepartmentCode(employeeList, 1L, "IS").forEach(Employee::printEmployee);
+/*        System.out.println("5. Return all the employees that do Shift 1 from department IS: ");
+        controller.loadEmployeesFromShiftByDepartmentCode(employeeList, 1L, "IS").forEach(Employee::printEmployee);*/
 
+        System.out.println("6. Return all the employees that their names start with letter A: ");
+        controller.loadEmployeesByNameLetter(employeeList, "A").forEach(Employee::printEmployee);
 
     }
 }

@@ -19,19 +19,27 @@ public class Controller {
 
     public List<Employee> maxSalaries(List<Employee> employeeList){
         Employee maxEmplSalary = maxSalary(employeeList);
-        return employeeList.stream().filter(employee -> employee.getSalary().compareTo(maxEmplSalary.getSalary()) == 0).collect(Collectors.toCollection(ArrayList::new));
+        return employeeList
+                .stream()
+                .filter(employee -> employee.getSalary().compareTo(maxEmplSalary.getSalary()) == 0)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     //Find the employee that has the bigest salary grouped by departments
 
     public Map<Long, Optional<Employee>> maxSalariesGroupedByDepartment(List<Employee> employeeList){
-        return employeeList.stream().collect(Collectors.groupingBy(e -> e.getDepartment().getId(), Collectors.maxBy(Comparator.comparingLong(Employee::getSalary))));
+        return employeeList
+                .stream()
+                .collect(Collectors.groupingBy(e -> e.getDepartment().getId(), Collectors.maxBy(Comparator.comparingLong(Employee::getSalary))));
     }
 
     //Find employees that work on a given Department name
 
     public List<Employee> loadEmployeesByDepartmentCode(List<Employee> employeeList, String departmentCode){
-       return employeeList.stream().filter(empl -> empl.getDepartment().getCode().equals(departmentCode)).collect(Collectors.toList());
+       return employeeList
+               .stream()
+               .filter(empl -> empl.getDepartment().getCode().equals(departmentCode))
+               .collect(Collectors.toList());
     }
 
     //Find employees that work on a specific shift from a specific department code
@@ -41,6 +49,17 @@ public class Controller {
         //return loadEmployeesByDepartmentCode(employeeList, departmentCode).stream().filter(employee -> employee.getShift().getId().compareTo(shiftId) == 0).collect(Collectors.toList());
                                         //or
 
-        return employeeList.stream().filter(employee -> employee.getDepartment().getCode().equals(departmentCode) && employee.getShift().getId().compareTo(shiftId) == 0).collect(Collectors.toList());
+        return employeeList.stream()
+                .filter(employee -> employee.getDepartment().getCode().equals(departmentCode) && employee.getShift().getId().compareTo(shiftId) == 0)
+                .collect(Collectors.toList());
+    }
+
+    //Find all the employees that their names starts with a specific letter
+
+    public List<Employee> loadEmployeesByNameLetter(List<Employee> employeeList, String startLetter){
+        return employeeList
+                .stream()
+                .filter(employee -> employee.getName().startsWith(startLetter))
+                .collect(Collectors.toList());
     }
 }
