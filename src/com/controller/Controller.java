@@ -50,7 +50,8 @@ public class Controller {
                                         //or
 
         return employeeList.stream()
-                .filter(employee -> employee.getDepartment().getCode().equals(departmentCode) && employee.getShift().getId().compareTo(shiftId) == 0)
+                .filter(employee -> employee.getDepartment().getCode().equals(departmentCode)
+                        && employee.getShift().getId().compareTo(shiftId) == 0)
                 .collect(Collectors.toList());
     }
 
@@ -75,6 +76,9 @@ public class Controller {
     //Count how many employees work on a specific shift
 
     public Long countEmployeesOnAShift(List<Employee> employeeList,  Long shiftId){
-        return employeeList.stream().filter(employee -> employee.getShift().getId().equals(shiftId)).count();
+        return employeeList
+                .stream()
+                .filter(employee -> employee.getShift().getId().equals(shiftId))
+                .count();
     }
 }
