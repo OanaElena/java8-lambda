@@ -42,15 +42,18 @@ public class Main {
 /*        System.out.println("10. Return all the employees sorted DESC by department name");
         controller.loadEmployeesByDepartmentNameDesc(employeeList).forEach(Employee::printEmployee);*/
 
+/*
         Employee employee = new Employee(13L, "Oxford", new Department(1L, "Human Resources", "HR"), null, 21L, new Shift(1L, "Shift 1"));
         employee.printEmployee();
         System.out.println("11. Return true or false if there is an Employee that has salary unspecified::::"+controller.checkIfSalaryIsNullForTheGivenEmployee(employee));
+*/
 
 
+        System.out.println("12. Using the Cosnumer interface we'll create an Employee and print it.");
+        controller.consumerEmployee().accept(new Employee(13L, "Oxford", new Department(1L, "Human Resources", "HR"), null, 21L, new Shift(1L, "Shift 1")));
 
         //TODO: Exercitiu cu
-        // Predicate cu test,
-        // Function, Supplier, Consumer, .anyMatch(), allMatch(), noneMatch(), reduce(), something with dates,
+        //  .anyMatch(), allMatch(), noneMatch(), reduce(), something with dates,
 
     }
 

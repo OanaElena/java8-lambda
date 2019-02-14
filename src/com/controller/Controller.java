@@ -4,6 +4,7 @@ import com.model.Department;
 import com.model.Employee;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -111,5 +112,11 @@ public class Controller {
     public boolean checkIfSalaryIsNullForTheGivenEmployee(Employee employee){
         Predicate<Employee> predicate = (empl) -> empl.getSalary() == null;
         return predicate.test(employee);
+    }
+
+    //Use Consumer and print an Employee
+    public Consumer<Employee> consumerEmployee(){
+        Consumer<Employee> consumer = Employee::printEmployee;
+        return consumer;
     }
 }
