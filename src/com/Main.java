@@ -49,11 +49,12 @@ public class Main {
 */
 
 
-        System.out.println("12. Using the Cosnumer interface we'll create an Employee and print it.");
-        controller.consumerEmployee().accept(new Employee(13L, "Oxford", new Department(1L, "Human Resources", "HR"), null, 21L, new Shift(1L, "Shift 1")));
+/*        System.out.println("12. Using the Cosnumer interface we'll create an Employee and print it.");
+        controller.consumerEmployee().accept(new Employee(13L, "Oxford", new Department(1L, "Human Resources", "HR"), null, 21L, new Shift(1L, "Shift 1")));*/
 
+        System.out.println("12. Using the match function print true/false if all the employee have known salarie:::."+controller.allMatchSalaries(employeeList));
         //TODO: Exercitiu cu
-        //  .anyMatch(), allMatch(), noneMatch(), reduce(), something with dates,
+        //  reduce(), something with dates,
 
     }
 

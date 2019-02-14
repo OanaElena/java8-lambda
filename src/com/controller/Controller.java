@@ -115,8 +115,17 @@ public class Controller {
     }
 
     //Use Consumer and print an Employee
+
     public Consumer<Employee> consumerEmployee(){
         Consumer<Employee> consumer = Employee::printEmployee;
         return consumer;
+    }
+
+    //use .allMatch and print true/false if all the employee have known salaries
+
+    public boolean allMatchSalaries(List<Employee> employeeList){
+        return employeeList
+                .stream()
+                .allMatch(employee -> employee.getSalary() != null);
     }
 }
