@@ -4,6 +4,7 @@ import com.model.Department;
 import com.model.Employee;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Controller {
@@ -103,5 +104,12 @@ public class Controller {
                 .stream()
                 .sorted((empl1, empl2) -> comparator.reversed().compare(empl1, empl2))
                 .collect(Collectors.toList());
+    }
+
+    //Return true of false if the given employee had empty salary
+
+    public boolean checkIfSalaryIsNullForTheGivenEmployee(Employee employee){
+        Predicate<Employee> predicate = (empl) -> empl.getSalary() == null;
+        return predicate.test(employee);
     }
 }

@@ -1,7 +1,9 @@
 package com;
 
 import com.controller.Controller;
+import com.model.Department;
 import com.model.Employee;
+import com.model.Shift;
 import com.view.EmployeeView;
 
 import java.util.List;
@@ -37,8 +39,19 @@ public class Main {
 /*        System.out.println("9. Return all the employees and make their names UPPERCASE: ");
         controller.loadEmployeesWithUppercase(employeeList).forEach(Employee::printEmployee);*/
 
-        System.out.println("10. Return all the employees sorted DESC by department name");
-        controller.loadEmployeesByDepartmentNameDesc(employeeList).forEach(Employee::printEmployee);
+/*        System.out.println("10. Return all the employees sorted DESC by department name");
+        controller.loadEmployeesByDepartmentNameDesc(employeeList).forEach(Employee::printEmployee);*/
+
+        Employee employee = new Employee(13L, "Oxford", new Department(1L, "Human Resources", "HR"), null, 21L, new Shift(1L, "Shift 1"));
+        employee.printEmployee();
+        System.out.println("11. Return true or false if there is an Employee that has salary unspecified::::"+controller.checkIfSalaryIsNullForTheGivenEmployee(employee));
+
+
+
+        //TODO: Exercitiu cu
+        // Predicate cu test,
+        // Function, Supplier, Consumer, .anyMatch(), allMatch(), noneMatch(), reduce(), something with dates,
 
     }
+
 }
